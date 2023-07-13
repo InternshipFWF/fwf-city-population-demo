@@ -1,0 +1,117 @@
+{
+  "name": "fwf-city-population-demo",
+  "projectId": "326bc10b-8b38-44d6-bbb7-cfd0249118ea",
+  "description": "The robot merges two tables for further processing. Then it creates a txt file containing cities and and their population, and in the end it requests input from user to establish how the output report will be sorted.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.21.0-preview]",
+    "UiPath.System.Activities": "[23.6.0-preview]",
+    "UiPath.Testing.Activities": "[23.6.0-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.6.1.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6fb0056e-497a-4da6-94d1-c26b1034518f",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_ReadExcelFile.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "68c7e538-ec15-4101-b463-45e489854065",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_MergeDataTables.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "eca67eaf-ad18-49a5-9d7e-bf5deebc2f3b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_CreateCityAndPopulationDictionary.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "db07ae6d-9457-499b-8522-1fc160d203aa",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_WriteDictionaryToTxtFile.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0f051344-c94a-4175-bb9d-18c8dc32f825",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_FilterTableBasedOnPopulation.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "01d9424c-eda6-40f1-8e8e-629b24bf1c40",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_SortTableByPopulationNumber.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f7db51d0-b7ac-4c63-9690-17d5b29ca222",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_GetInputFromUser.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "fb041311-c9a1-4af4-9933-6b408db33ebc",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\UnitTest_WriteExcelFile.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "d946b7d7-1818-40a4-ac07-f528b4b8dfa2",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
