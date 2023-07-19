@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>540,1340.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>610.4,1076</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FilterTableBasedOnPopulation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -92,14 +92,14 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FilterTableBasedOnPopulation" sap:VirtualizedContainerService.HintSize="550.4,1276" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FilterTableBasedOnPopulation" sap:VirtualizedContainerService.HintSize="600,1011.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - FilterTableBasedOnPopulation" sap:VirtualizedContainerService.HintSize="488,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start FilterTableBasedOnPopulation&quot;]" />
-    <Assign DisplayName="Assign - Init out_dtInputFiltered" sap:VirtualizedContainerService.HintSize="488,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log Message - FilterTableBasedOnPopulation" sap:VirtualizedContainerService.HintSize="558.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start FilterTableBasedOnPopulation&quot;]" />
+    <Assign DisplayName="Assign - Init out_dtInputFiltered" sap:VirtualizedContainerService.HintSize="558.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[out_dtInputFiltered]</OutArgument>
       </Assign.To>
@@ -107,7 +107,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataTable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign - Clone in_dtInputMerged" sap:VirtualizedContainerService.HintSize="488,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Clone in_dtInputMerged" sap:VirtualizedContainerService.HintSize="558.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[out_dtInputFiltered]</OutArgument>
       </Assign.To>
@@ -115,31 +115,30 @@
         <InArgument x:TypeArguments="sd:DataTable">[in_dtInputMerged.Clone]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtInputMerged]" DisplayName="For Each Row in Data Table - in_dtInputMerged" sap:VirtualizedContainerService.HintSize="488,738.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtInputMerged]" DisplayName="For Each Row in Data Table - in_dtInputMerged" sap:VirtualizedContainerService.HintSize="558.4,585.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454.4,550.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,469.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[Double.Parse(row(2).ToString)&gt;in_oneMillionPopulationNumber]" sap:VirtualizedContainerService.HintSize="411.2,460.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Double.Parse(row(2).ToString)&gt;in_oneMillionPopulationNumber]" DisplayName="If Population &gt; 1 million " sap:VirtualizedContainerService.HintSize="483.2,376.8" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="377.6,277.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[out_dtInputFiltered]" DisplayName="Add Data Row - row.ItemArray" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[out_dtInputFiltered]" DisplayName="Add Data Row - row.ItemArray" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                 </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
               </If.Else>
             </If>
           </Sequence>
